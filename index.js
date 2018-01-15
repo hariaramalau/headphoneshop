@@ -24,8 +24,13 @@ app.use(fileUpload());
 app.use(express.static('public'));
 app.use(passport.initialize());
 
+app.get("/", (req,res)=>{
+    res.send("wowoowowowowowo");
+})
+
 
 app.use("/api/headphones", headphonesRoutes(passport));
 app.use("/api/user", userRoutes);
 
-app.listen(3000);
+// app.listen(3000);
+app.listen(process.env.PORT || 3000);
